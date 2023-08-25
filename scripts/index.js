@@ -31,20 +31,23 @@ function character_list_render(character_list) {
     character_image.setAttribute('data-bs-placement', "right");
     character_image.setAttribute('title',character.name)
     character_list_elm.appendChild(character_image);
-    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-    tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-            return new bootstrap.Tooltip(tooltipTriggerEl)
-    })	
   });
   var add_character = document.createElement('div');
   add_character.classList.add("pick-character-image");
   add_character.classList.add("add-character-btn");
   add_character.setAttribute('onclick', 'add_character()');
   add_character.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>'
+  add_character.setAttribute('data-bs-toggle', "tooltip");
+  add_character.setAttribute('data-bs-placement', "right");
+  add_character.setAttribute('title','新しいキャラクターを作る');
   character_list_elm.appendChild(add_character);
   if (document.getElementById("character_list_id" + character_id)) {
     document.getElementById("character_list_id" + character_id).classList.add("picked");
   }
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+  tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+          return new bootstrap.Tooltip(tooltipTriggerEl)
+  })
 }
 
 function conversation_clear() {
