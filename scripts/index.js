@@ -17,6 +17,7 @@ var dbVersion = 1;
 let character_id = null;
 let character_data = null;
 var character_list = [];
+var tooltipList;
 //キャラクターリストをレンダリング
 function character_list_render(character_list) {
   character_list_elm.innerHTML = '';
@@ -26,7 +27,14 @@ function character_list_render(character_list) {
     character_image.classList.add("pick-character-image");
     character_image.setAttribute('onclick', 'character_pick(' + character.id + ')');
     character_image.id = 'character_list_id' + character.id;
+    character_image.setAttribute('data-bs-toggle', "tooltip");
+    character_image.setAttribute('data-bs-placement', "right");
+    character_image.setAttribute('title',character.name)
     character_list_elm.appendChild(character_image);
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl)
+    })	
   });
   var add_character = document.createElement('div');
   add_character.classList.add("pick-character-image");
@@ -299,6 +307,15 @@ Name.addEventListener("input", (event) => {
     } else {
       console.log(message);
       character_data = updatedCharacterData;
+      getAllCharacters(function (error, characters) {
+        if (error) {
+          console.error(error);
+        } else {
+          character_list = characters;
+          character_list_render(character_list);
+          console.log('全てのデータを取得しました。', character_list);
+        }
+      });
     }
   });
   if (SystemInput.value && Name.value) {
