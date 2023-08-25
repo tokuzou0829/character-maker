@@ -1,0 +1,129 @@
+.assistant-message{
+    background: #f2f2f2;
+    color: black;
+    padding: 10px;
+    display: flex;
+    justify-content: end;
+    width: fit-content;
+    border-radius: 10px;
+    margin-left: 10px;
+    font-weight: 500;
+    margin-right: 10px;
+    max-width: 80%;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+.user-message{
+    background: #008cff;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: end;
+    width: fit-content;
+    border-radius: 10px;
+    margin-right: 10px;
+    font-weight: 500;
+    margin-left: auto;
+    max-width: 80%;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+.modalopen{
+    position: fixed;
+    margin: 10px;
+    top:0;
+    left:0;
+}
+#messages{
+    overflow-y: scroll;
+}
+#chatForm{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    padding: 10px;
+    padding-right: 0px;
+    align-items: center;
+    background: white;
+}
+#inputMessage{
+    width: 100%;
+}
+#submit_btn{
+    width: 50px;
+    height: 50px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.message-user-icon{
+    object-fit: cover;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-top: 12px;
+    margin-left: 5px;
+}
+.icon-label{
+    font-size: 15px;
+    margin-top:0px;
+}
+.setting-icon{
+    margin-top: 10px;
+    object-fit: cover;
+    width: 100px;height: 100px;border-radius: 50%;
+}
+@media screen and (min-width:800px) {
+    .sm-bar{
+        display:flex;
+    }
+    .character-pick-bar {
+            padding: 5px;
+            padding-bottom: 10px;
+            display: block;
+            padding-top: 60px;
+            overflow: auto;
+            width: 120px;
+    }
+    .pick-character-image{
+        margin-top: 5px;
+        margin-bottom: 5px;
+        margin-left: 5px;
+        aspect-ratio: 1/1;
+    }
+}
+/* 画面幅520px"以下"の時に読み込むスタイル */
+@media screen and (max-width:799px) {
+    .character-pick-bar{
+        padding: 5px;
+        padding-left: 60px;
+        border-bottom: solid;
+        border-width: 1px;
+        border-color: #cecaca;
+        height: 100px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        display: flex;
+        overflow-x: scroll;
+        overflow-y: hidden;
+    }
+}
+.pick-character-image{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: solid;
+    border-width: 1px;
+    border-color: #f2f2f2;
+    margin-right: 5px;
+    object-fit: cover;
+}
+.add-character-btn{
+    background: gray;
+    padding: 25px;
+    padding-top: 23px;
+}
+.picked{
+    box-shadow: 0px 0px 15px 0 #b1b0b0;
+}
