@@ -339,7 +339,7 @@ chatForm.addEventListener('submit', async function (e) {
     }
   });
   inputMessage.value = '';
-  const response = await fetch('http://127.0.0.1:8787/', {
+  const response = await fetch('https://chat-gpt-backend.tokuzou.workers.dev/', {
     method: 'POST',
     body: JSON.stringify({
       messages: [{
