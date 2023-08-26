@@ -41,11 +41,6 @@ function character_list_render(character_list) {
   add_character.classList.add("add-character-btn");
   add_character.setAttribute('onclick', 'add_character()');
   add_character.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>'
-  if(window.innerWidth > 800){
-    add_character.setAttribute('data-bs-toggle', "tooltip");
-    add_character.setAttribute('data-bs-placement', "right");
-    add_character.setAttribute('title','新しいキャラクターを作る');
-  }
   character_list_elm.appendChild(add_character);
   if (document.getElementById("character_list_id" + character_id)) {
     document.getElementById("character_list_id" + character_id).classList.add("picked");
