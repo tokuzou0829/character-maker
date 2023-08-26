@@ -110,6 +110,9 @@
         overflow-x: scroll;
         overflow-y: hidden;
     }
+    .pick-character-image{
+        aspect-ratio: 1/1;
+    }
 }
 .pick-character-image{
     width: 80px;
