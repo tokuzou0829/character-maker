@@ -2,7 +2,7 @@
     "short_name": "キャラメーカー",
     "name": "おしゃべりAIキャラクターメーカー",
     "display": "standalone",
-    "start_url": "/",
+    "start_url": "/character-maker",
 	"icons": [
 		{
 			"src": "./images/icon-36x36.png",
