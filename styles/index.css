@@ -95,7 +95,6 @@
         aspect-ratio: 1/1;
     }
 }
-/* 画面幅520px"以下"の時に読み込むスタイル */
 @media screen and (max-width:799px) {
     .character-pick-bar{
         padding: 5px;
