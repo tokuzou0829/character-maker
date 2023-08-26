@@ -96,6 +96,11 @@ function character_pick(targetCharacterId) {
       }else{
         messagesContainer.innerHTML = `<div id="start_message"><h1 style="text-align: center;font-size: 40px;font-weight: 900;color: gray;margin: 10px;margin-top: 25%;">おしゃべりAIメーカー</h1><p style="text-align: center;color: black;margin: 10px;font-weight: 500;margin-bottom: 25%;">会話を始めよう！左上の歯車からキャラクターの設定ができます！</p></div>`;
       }
+      if (SystemInput.value && Name.value) {
+        submit_btn.disabled = false;
+      } else {
+        submit_btn.disabled = true;
+      }
     }
   });
 }
