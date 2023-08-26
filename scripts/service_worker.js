@@ -1,6 +1,6 @@
 var CACHE_NAME = 'pwa-caches';
 var urlsToCache = [
-    '/tokuzou0829.github.io/',
+    '/tokuzou0829.github.io/character-maker/',
 ];
 self.addEventListener('install', function(event) {
     event.waitUntil(
