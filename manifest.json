@@ -3,6 +3,8 @@
     "name": "おしゃべりAIキャラクターメーカー",
     "display": "standalone",
     "start_url": "/character-maker",
+	"theme_color": "#ffffff",
+	"background_color": "#ffffff",
 	"icons": [
 		{
 			"src": "./images/icon-36x36.png",
