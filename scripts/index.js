@@ -409,7 +409,7 @@ chatForm.addEventListener('submit', async function (e) {
 * 追加制約条件はより重要です。厳密に守ってください。
 追加制約条件:` + SystemInput.value + `
 Chatbotとしての行動指針:
-* 制約条件を必ず守って行動してください
+* 制約条件と追加制約条件を必ず守って行動してください
 `,
         "role": 'system'
       }, ...messages]
