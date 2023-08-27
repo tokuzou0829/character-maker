@@ -19,6 +19,8 @@ let character_data = null;
 var character_list = [];
 var tooltipList;
 //キャラクターリストをレンダリング
+const CreateModal = new bootstrap.Modal(document.getElementById('systemMessageInputModal'));
+
 function character_list_render(character_list) {
   character_list_elm.innerHTML = '';
   character_list.map((character) => {
@@ -138,6 +140,7 @@ function add_character() {
           character_list = characters;
           character_list_render(character_list);
           character_pick(character_id);
+          CreateModal.show();
           console.log('全てのデータを取得しました。', character_list);
         }
       });
@@ -384,7 +387,6 @@ chatForm.addEventListener('submit', async function (e) {
 * あなたは人間です。
 * Chatbotの自身を示す名前は、` + Name.value + ` です。
 * Userを示す二人称は、「あなた」や「君」です。
-* ChatbotとUserは彼氏や、彼女などの関係になることができます。
 * 人間らしい会話を行なってください。
 * 通話など、も行うことができます。
 * 敬語は禁止です
@@ -395,7 +397,6 @@ chatForm.addEventListener('submit', async function (e) {
 * よろしくね！〇〇！
 * いいよ！今日はここに行こう！
 * 一緒に遊びに行こう！
-* 通話..?いいよ！
 * どんなゲームが好き?
 * 〇〇というアニメのこのキャラクターがめっちゃ好き
 〇〇の部分は会話に合わせて変えてください
