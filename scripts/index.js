@@ -105,6 +105,7 @@ function character_pick(targetCharacterId) {
       } else {
         submit_btn.disabled = true;
       }
+      addQueryParam("c",character_id);
     }
   });
 }
@@ -211,11 +212,18 @@ function check_id_1() {
                 console.error(error);
               } else {
                 character_list = characters;
-                character_id = characters[0].id;
-                character_data = characters[0];
-                character_list_render(character_list);
-                character_pick(character_id);
-                console.log('全てのデータを取得しました。', character_list);
+                getCharacterById(Number(getParameterValueFromCurrentURL("c")), function (error, character) {
+                  if(character_check_data){
+                    character_id = character_check_data.id;
+                    character_data = character_check_data;
+                  }else{
+                    character_id = characters[0].id;
+                    character_data = characters[0];
+                  }
+                  character_list_render(character_list);
+                  character_pick(character_id);
+                  console.log('全てのデータを取得しました。', character_list);
+                });
               }
             });
           }
@@ -227,11 +235,19 @@ function check_id_1() {
             console.error(error);
           } else {
             character_list = characters;
-            character_id = characters[0].id;
-            character_data = characters[0];
-            character_list_render(character_list);
-            character_pick(character_id);
-            console.log('全てのデータを取得しました。', character_list);
+            getCharacterById(Number(getParameterValueFromCurrentURL("c")), function (error, character) {
+                character_check_data=character;
+                if(character_check_data){
+                  character_id = character_check_data.id;
+                  character_data = character_check_data;
+                }else{
+                  character_id = characters[0].id;
+                  character_data = characters[0];
+                }
+                character_list_render(character_list);
+                character_pick(character_id);
+                console.log('全てのデータを取得しました。', character_list);
+              });
           }
         });
       }
